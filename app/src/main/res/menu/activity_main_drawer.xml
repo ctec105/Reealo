@@ -5,6 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_productos"
+            android:icon="@drawable/ic_create_black"
+            android:title="@string/menu_productos" />
+        <item
+            android:id="@+id/nav_promociones"
+            android:icon="@drawable/ic_create_black"
+            android:title="@string/menu_promociones" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
             android:id="@+id/nav_inicio"
             android:icon="@drawable/ic_home_black"
             android:title="@string/menu_inicio" />
@@ -16,10 +27,11 @@
             android:id="@+id/nav_carrito"
             android:icon="@drawable/ic_shopping_cart_black"
             android:title="@string/menu_carrito" />
+
         <item
-            android:id="@+id/nav_pedidos"
-            android:icon="@drawable/ic_content_paste_blac"
-            android:title="@string/menu_pedidos" />
+            android:id="@+id/nav_cerrar_sesion"
+            android:icon="@drawable/ic_settings_black"
+            android:title="@string/menu_cerrar_sesion" />
     </group>
 
     <item android:title="Communicate">

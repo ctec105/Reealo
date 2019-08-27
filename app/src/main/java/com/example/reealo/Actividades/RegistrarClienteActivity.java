@@ -15,7 +15,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_cliente);
 
         // Cambiar el titulo del menu dinamicamente
-        this.setTitle(R.string.titulo_registrar_producto);
+        this.setTitle(R.string.titulo_registrar_cliente);
 
         // Mostrar botón de retroceso
         ActionBar actionBar = getSupportActionBar();

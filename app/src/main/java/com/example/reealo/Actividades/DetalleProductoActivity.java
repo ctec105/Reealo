@@ -2,12 +2,10 @@ package com.example.reealo.Actividades;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.widget.TextView;
 
 import com.example.reealo.R;
@@ -31,8 +29,8 @@ public class DetalleProductoActivity extends AppCompatActivity {
 
         // obtenemos de la vista los componentes para asociarlos
         TextView nombre = (TextView) findViewById(id.textViewNombre);
-        TextView precio = (TextView) findViewById(id.textViewPrecio);
-        TextView precioOferta = (TextView) findViewById(id.textViewPrecioOferta);
+        TextView precio = (TextView) findViewById(id.lnkEditar);
+        TextView precioOferta = (TextView) findViewById(id.lnkEliminar);
 
         // recuperamos los valores que cargamos a la actividad al seleccionar un producto
         Intent intent = getIntent();

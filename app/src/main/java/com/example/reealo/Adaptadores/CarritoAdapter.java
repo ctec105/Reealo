@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.reealo.Clases.Producto;
@@ -28,10 +27,10 @@ public class CarritoAdapter  extends RecyclerView.Adapter<CarritoAdapter.MyViewH
         public MyViewHolder(View view) {
             super(view);
             imagen = (ImageView) view.findViewById(R.id.imageViewProducto);
-            nombre = (TextView) view.findViewById(R.id.textViewTitulo);
-            stock = (TextView) view.findViewById(R.id.textViewStock);
-            precio = (TextView) view.findViewById(R.id.textViewPrecio);
-            precioOerta = (TextView) view.findViewById(R.id.textViewPrecioOferta);
+            nombre = (TextView) view.findViewById(R.id.lblNombre);
+            stock = (TextView) view.findViewById(R.id.txtDescripcion);
+            precio = (TextView) view.findViewById(R.id.lnkEditar);
+            precioOerta = (TextView) view.findViewById(R.id.lnkEliminar);
         }
     }
 

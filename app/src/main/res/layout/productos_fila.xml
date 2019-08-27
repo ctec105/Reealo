@@ -31,7 +31,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewTitulo"
+                    android:id="@+id/lblNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -40,7 +40,7 @@
                     android:textSize="18dp" />
 
                 <TextView
-                    android:id="@+id/textViewStock"
+                    android:id="@+id/txtDescripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -55,7 +55,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewPrecio"
+                    android:id="@+id/lnkEditar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -65,7 +65,7 @@
                     android:textSize="12dp" />
 
                 <TextView
-                    android:id="@+id/textViewPrecioOferta"
+                    android:id="@+id/lnkEliminar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
