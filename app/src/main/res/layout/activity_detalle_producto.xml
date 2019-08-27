@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Actividades.DetalleProductoActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="294dp"
+        app:srcCompat="@drawable/cojinblanco" />
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewEspecificacionTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Especificación del Producto" />
+
+    <TextView
+        android:id="@+id/textViewEspecificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Medidas 10cm x 10cm" />
+
+    <TextView
+        android:id="@+id/textViewDescripcionTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Descripción" />
+
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Almohada personalizada" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewPrecio"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textViewPrecioOferta"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/buttonAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Agregar" />
+    </LinearLayout>
+
+</LinearLayout>
