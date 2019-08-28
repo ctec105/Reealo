@@ -11,6 +11,7 @@ import com.example.reealo.Clases.Producto;
 import com.example.reealo.fragmentos.Carrito;
 import com.example.reealo.fragmentos.Notificaciones;
 import com.example.reealo.fragmentos.Productos;
+import com.example.reealo.fragmentos.Productos2;
 import com.example.reealo.fragmentos.Promociones;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -133,6 +134,12 @@ public class MainActivity extends AppCompatActivity
             this.setTitle(R.string.titulo_carrito_compras);
             // cargamos el fragmento Carrito de Compras
             fragment = new Carrito();
+            callFragment(fragment);
+        } else if (id == R.id.nav_productos) {
+            // Cambiar el titulo del menu Producto
+            this.setTitle(R.string.titulo_registrar_producto);
+            // cargamos el fragmento de Productos2
+            fragment = new Productos2();
             callFragment(fragment);
         } else if (id == R.id.nav_promociones) {
             // Cambiar el titulo del menu Promociones

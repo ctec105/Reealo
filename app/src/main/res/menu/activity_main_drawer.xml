@@ -37,6 +37,10 @@
     <item android:title="Communicate">
         <menu>
             <item
+                android:id="@+id/nav_ubicacion"
+                android:icon="@drawable/ic_location_on_black"
+                android:title="Ubicacion" />
+            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_share" />

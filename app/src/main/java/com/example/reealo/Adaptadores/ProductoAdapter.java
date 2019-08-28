@@ -38,7 +38,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
             super(view);
             imagen = (ImageView) view.findViewById(R.id.imageViewProducto);
             nombre = (TextView) view.findViewById(R.id.lblNombre);
-            stock = (TextView) view.findViewById(R.id.txtDescripcion);
+            stock = (TextView) view.findViewById(R.id.txtDescripcionProducto);
             precio = (TextView) view.findViewById(R.id.lnkEditar);
             precioOerta = (TextView) view.findViewById(R.id.lnkEliminar);
         }

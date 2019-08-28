@@ -11,18 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetallePromocionActivity"></activity>
         <activity
             android:name=".Actividades.ui.login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
-        <activity android:name=".Actividades.GestionarPromocionActivity">
+        <activity android:name=".Actividades.GestionarPromocionActivity" android:parentActivityName=".MainActivity">
 
 
         </activity>
-        <activity android:name=".Actividades.RegistrarClienteActivity" >
+        <activity android:name=".Actividades.RegistrarClienteActivity">
 
         </activity>
-        <activity android:name=".Actividades.GestionarProductoActivity">
+        <activity android:name=".Actividades.GestionarProductoActivity" android:parentActivityName=".MainActivity">
 
         </activity>
         <activity

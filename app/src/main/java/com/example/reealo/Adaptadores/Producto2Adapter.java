@@ -13,51 +13,53 @@ import com.example.reealo.R;
 
 import java.util.List;
 
-public class CarritoAdapter  extends RecyclerView.Adapter<CarritoAdapter.MyViewHolder> implements View.OnClickListener{
+public class Producto2Adapter extends RecyclerView.Adapter<Producto2Adapter.MyViewHolder> implements View.OnClickListener {
 
+    // Instanciamos
     private List<Producto> productoList;
     private View.OnClickListener listener;
+
+    // Constructor
+    public Producto2Adapter(List<Producto> productoList) {
+        this.productoList = productoList;
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
 
     // Obtenemos los valores de la vista
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imagen;
-        public TextView nombre, stock, precio, precioOerta;
+        public TextView nombre, descripcion;
 
         public MyViewHolder(View view) {
             super(view);
             imagen = (ImageView) view.findViewById(R.id.imageViewProducto);
-            nombre = (TextView) view.findViewById(R.id.lblNombre);
-            stock = (TextView) view.findViewById(R.id.txtDescripcionProducto);
-            precio = (TextView) view.findViewById(R.id.lnkEditar);
-            precioOerta = (TextView) view.findViewById(R.id.lnkEliminar);
+            nombre = (TextView) view.findViewById(R.id.lblNombreProducto);
+            descripcion = (TextView) view.findViewById(R.id.lblDescripcionProducto);
         }
     }
 
+    // Creamos el RecyclerView para la lista de productos 2
     @Override
-    public CarritoAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.productos_carrito_fila, parent, false);
-
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.productos_2_fila, parent, false);
         itemView.setOnClickListener(this);
-
-        return new CarritoAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
 
-    public CarritoAdapter(List<Producto> productoList) {
-        this.productoList = productoList;
-    }
-
+    // Actualiza el contenido de RecyclerView.ViewHolder con el elemento en la posición dada
     @Override
-    public void onBindViewHolder(CarritoAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, int position) {
         Producto producto = productoList.get(position);
         holder.imagen.setImageResource(producto.getIdImagen());
         holder.nombre.setText(producto.getNombre());
-        //holder.stock.setText(producto.getStock());
-        holder.precio.setText(producto.getPrecio());
-        holder.precioOerta.setText(producto.getPrecioOferta());
+        holder.descripcion.setText("desscripcion del producto"); // falta atributo descripcion
     }
 
+    // Devuelve el número total de elementos en el conjunto de datos que posee el adaptador.
     @Override
     public int getItemCount() {
         return productoList.size();
@@ -71,7 +73,4 @@ public class CarritoAdapter  extends RecyclerView.Adapter<CarritoAdapter.MyViewH
         }
     }
 
-    public void setOnClickListener(View.OnClickListener listener){
-        this.listener = listener;
-    }
 }
