@@ -6,5 +6,7 @@
 
     <!-- colores creados -->
     <color name="colorSubLogo">#1f2450</color>
+    <color name="colorLogo">#28306F</color>
+
 
 </resources>

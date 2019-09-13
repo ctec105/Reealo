@@ -3,6 +3,10 @@
     package="com.example.reealo">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
 
     <application
         android:allowBackup="true"
@@ -39,6 +43,7 @@
         <activity android:name=".Actividades.RegistrarClienteActivity" />
 
         <activity android:name=".Actividades.GestionarProductoActivity" />
+
 
     </application>
 
