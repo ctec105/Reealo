@@ -110,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese el precio"
+            android:hint="Ingrese precio"
             android:inputType="numberDecimal" />
     </LinearLayout>
     <LinearLayout
