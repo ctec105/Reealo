@@ -106,10 +106,10 @@
         android:layout_marginEnd="8dp">
 
         <Button
-            android:id="@+id/btnCrear"
+            android:id="@+id/btnGrabar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear" />
+            android:text="Grabar" />
     </LinearLayout>
 
 

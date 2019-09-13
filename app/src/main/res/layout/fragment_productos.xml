@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragmentos.Productos">
-
-    <!-- TODO: Update blank fragment layout -->
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewProductos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <!-- Botón flotante -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_add_white"
+        app:backgroundTint="@color/colorSubLogo"/>
+
 </FrameLayout>

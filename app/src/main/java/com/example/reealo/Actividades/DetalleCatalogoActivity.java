@@ -1,47 +1,56 @@
 package com.example.reealo.Actividades;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reealo.MainActivity;
 import com.example.reealo.R;
 
-public class GestionarPromocionActivity extends AppCompatActivity {
+import static com.example.reealo.R.*;
 
-    // TODO: Crea e inicia el activity (GestionarPromocionActivity)
+public class DetalleCatalogoActivity extends AppCompatActivity {
+
+    // TODO: Crea e inicia el activity (DetalleProductoActivity)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gestionar_promocion);
+        setContentView(layout.activity_detalle_producto);
+
+        // cambiamos el título de la actividad
+        this.setTitle(string.titulo_detalle_producto);
 
         // activamos el botón de retroceso en el menú superior
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         // obtenemos de la vista los componentes para asociarlos
-        TextView nombre = (TextView) findViewById(R.id.txtNombreProducto);
-        TextView descripcion = (TextView) findViewById(R.id.txtDescripcionPromocion);
-        Button button = (Button)findViewById(R.id.btnGrabar);
+        TextView nombre = (TextView) findViewById(id.textViewNombre);
+        TextView precio = (TextView) findViewById(id.lnkEditar);
+        TextView precioOferta = (TextView) findViewById(id.lnkEliminar);
 
-        // recuperamos los valores que cargamos a la actividad al seleccionar una promocion
+        // recuperamos los valores que cargamos a la actividad al seleccionar un producto
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
-            this.setTitle(R.string.titulo_actualizar_promocion);
-            button.setText(R.string.button_actualizar);
             nombre.setText(bundle.getString("nombre"));
-            descripcion.setText(bundle.getString("descripcion"));
-        } else {
-            this.setTitle(R.string.titulo_crear_promocion);
-            button.setText(R.string.button_registrar);
+            precio.setText(bundle.getString("precio"));
+            precioOferta.setText(bundle.getString("precioOferta"));
         }
 
+    }
+
+    // TODO: Inicializa el contenido del menú superior de la actividad
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
     // TODO: Se llama cuando se selecciona una opción del menú superior
@@ -61,8 +70,8 @@ public class GestionarPromocionActivity extends AppCompatActivity {
         } else if (id == android.R.id.home){
             // mostramos un mensaje en pantalla
             Toast.makeText(this,"Has pulsado la flecha atrás", Toast.LENGTH_LONG).show();
-            // le decimos a la actividad principal que queremos cargar el fragmento de promociones
-            MainActivity.opcion = 2;
+            // le decimos a la actividad principal que queremos cargar el fragmento de catalogo
+            MainActivity.opcion = 1;
             // invocamos a la actividad principal
             intent = new Intent(this, MainActivity.class);
             startActivity(intent);

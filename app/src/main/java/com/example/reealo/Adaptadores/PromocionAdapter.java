@@ -46,7 +46,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
     // Creamos el RecyclerView para la lista de promociones
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.promociones_fila, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_promociones, parent, false);
         itemView.setOnClickListener(this);
         return new PromocionAdapter.MyViewHolder(itemView);
     }

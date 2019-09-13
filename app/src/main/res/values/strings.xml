@@ -24,12 +24,18 @@
 
     <!-- Titulo para los modulos -->
     <string name="titulo_registrar_cliente">Registrar Cliente</string>
+    <string name="titulo_listar_producto">Mis Productos</string>
     <string name="titulo_registrar_producto">Registrar Producto</string>
-    <string name="titulo_buscar_producto">Buscar Producto</string>
-    <string name="titulo_detalle_producto">Detalle Producto</string>
+    <string name="titulo_actualizar_producto">Actualizar Producto</string>
+    <string name="titulo_detalle_producto">Detalle del Producto</string>
     <string name="titulo_carrito_compras">Carrito de Compras</string>
-    <string name="titulo_crear_promocion">Crear Promociones</string>
-
+    <string name="titulo_listar_promocion">Mis Promociones</string>
+    <string name="titulo_crear_promocion">Crear Promoción</string>
+    <string name="titulo_actualizar_promocion">Actualizar Promoción</string>
+    <string name="titulo_buscar_producto">Buscar Producto</string>
+    <string name="titulo_listar_notificacion">Mis Notifiaciones</string>
+    <string name="button_registrar">Registrar</string>
+    <string name="button_actualizar">Actualizar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -43,4 +49,5 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="todo">TODO</string>
 </resources>

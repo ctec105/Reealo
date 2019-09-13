@@ -1,6 +1,6 @@
 package com.example.reealo.Adaptadores;
 
-import android.content.Context;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,58 +14,61 @@ import com.example.reealo.R;
 
 import java.util.List;
 
-//import com.example.reealo.Clases.Productoss;
+public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.MyViewHolder> implements View.OnClickListener {
 
-public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyViewHolder> implements View.OnClickListener {
-
-    // TODO: Instancias que vamos a necesitar
+    // TODO> Instancias que vamos a necesitarr
     private List<Producto> productoList;
     private View.OnClickListener listener;
-    private Context context;
 
     // TODO: Constructor
-    public ProductoAdapter(List<Producto> productoList) {
+    public CatalogoAdapter(List<Producto> productoList) {
         this.productoList = productoList;
     }
 
-    public void setOnClickListener(View.OnClickListener listener){
+    public void setOnClickListener(View.OnClickListener listener) {
         this.listener = listener;
     }
 
-    // TODO: Enlazamos los controles de la vista
+    // TODO: Obtenemos los valores de la vista
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imagen;
-        public TextView nombre, descripcion;
+        public TextView nombre, stock, precio, precioOerta;
 
         public MyViewHolder(View view) {
             super(view);
             imagen = (ImageView) view.findViewById(R.id.imageViewProducto);
-            nombre = (TextView) view.findViewById(R.id.lblNombreProducto);
-            descripcion = (TextView) view.findViewById(R.id.lblDescripcionProducto);
+            //nombre = (TextView) view.findViewById(R.id.lblNombre);
+            stock = (TextView) view.findViewById(R.id.lblStock);
+            precio = (TextView) view.findViewById(R.id.lblPrecio);
+            precio.setPaintFlags(precio.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); // va a tachar el texto
+            precioOerta = (TextView) view.findViewById(R.id.lblPrecioOferta);
         }
     }
 
     // TODO: Creamos el RecyclerView para la lista de productos
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_producto, parent, false);
+        //View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.productos_fila, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_catalogo, parent, false);
         itemView.setOnClickListener(this);
         return new MyViewHolder(itemView);
     }
 
-    // TODO: Llenamos los controles con data proveniente de la lista que entra en el constructor
+    // TODO: Actualiza el contenido de RecyclerView.ViewHolder con el elemento en la posición dada
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Producto producto = productoList.get(position);
-
-        //Picasso.with(context).load("http://192.168.1.46/Publicaciones/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imagen);
         holder.imagen.setImageResource(producto.getIdImagen());
-        holder.nombre.setText(producto.getNombre());
-        holder.descripcion.setText("desscripcion del producto");
+        //holder.nombre.setText(producto.getNombre());
+        holder.stock.setText(producto.getStock());
+        holder.precio.setText(producto.getPrecio());
+        holder.precioOerta.setText(producto.getPrecioOferta());
+
+
     }
 
-    // TODO: Devuelve el número total de elementos en el conjunto de datos que posee el adaptador
+    // TODO: Devuelve el número total de elementos en el conjunto de datos que posee el adaptador.
     @Override
     public int getItemCount() {
         return productoList.size();

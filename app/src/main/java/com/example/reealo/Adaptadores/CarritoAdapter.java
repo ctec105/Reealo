@@ -37,7 +37,7 @@ public class CarritoAdapter  extends RecyclerView.Adapter<CarritoAdapter.MyViewH
     @Override
     public CarritoAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.productos_carrito_fila, parent, false);
+                .inflate(R.layout.item_list_carrito, parent, false);
 
         itemView.setOnClickListener(this);
 
