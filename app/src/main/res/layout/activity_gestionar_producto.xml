@@ -62,7 +62,7 @@
             android:gravity="start|top"
             android:scrollbars="vertical"
             android:maxLines="3"
-            android:hint="Ingrese una descripción"
+            android:hint="Ingrese descripción"
             android:inputType="textMultiLine" />
 
     </LinearLayout>
