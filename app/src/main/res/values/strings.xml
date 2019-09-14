@@ -9,18 +9,18 @@
     <string name="menu_buscarProducto">Buscar Productos</string>
     <string name="menu_carritoCompraso">Carrito de Compras</string>
 
-    <string name="menu_inicio">Inicio</string>
+    <string name="menu_productos_usuario">Productos</string>
     <string name="menu_productos">Productos</string>
     <string name="menu_promociones">Promociones</string>
     <string name="menu_compras">Compras</string>
     <string name="menu_preguntas">Preguntas</string>
-    <string name="menu_notificaciones">Notificaciones</string>
+    <string name="menu_promociones_usuario">Promociones</string>
     <string name="menu_carrito">Carrito</string>
     <string name="menu_pedidos">Pedidos</string>
     <string name="menu_respuestas">Respuestas</string>
     <string name="menu_cerrar_sesion">Cerrar Sesión</string>
     <string name="menu_send">Send</string>
-    <string name="menu_share">Send</string>
+    <string name="menu_contacto">Contactenos</string>
 
     <!-- Titulo para los modulos -->
     <string name="titulo_registrar_cliente">Registrar Cliente</string>
@@ -34,6 +34,7 @@
     <string name="titulo_actualizar_promocion">Actualizar Promoción</string>
     <string name="titulo_buscar_producto">Buscar Producto</string>
     <string name="titulo_listar_notificacion">Mis Notifiaciones</string>
+    <string name="titulo_contacto">Contacto</string>
     <string name="button_registrar">Registrar</string>
     <string name="button_actualizar">Actualizar</string>
 

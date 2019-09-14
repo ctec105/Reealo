@@ -6,26 +6,26 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_productos"
-            android:icon="@drawable/ic_create_black"
+            android:icon="@drawable/ic_producto"
             android:title="@string/menu_productos" />
         <item
             android:id="@+id/nav_promociones"
-            android:icon="@drawable/ic_create_black"
+            android:icon="@drawable/ic_promocion"
             android:title="@string/menu_promociones" />
     </group>
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_inicio"
-            android:icon="@drawable/ic_home_black"
-            android:title="@string/menu_inicio" />
+            android:icon="@drawable/ic_producto_usuario"
+            android:title="@string/menu_productos_usuario" />
         <item
             android:id="@+id/nav_notificacion"
-            android:icon="@drawable/ic_notifications_black"
-            android:title="@string/menu_notificaciones" />
+            android:icon="@drawable/ic_promocion_usuario"
+            android:title="@string/menu_promociones_usuario" />
         <item
             android:id="@+id/nav_carrito"
-            android:icon="@drawable/ic_shopping_cart_black"
+            android:icon="@drawable/ic_carrito_compras"
             android:title="@string/menu_carrito" />
 
         <item
@@ -38,12 +38,12 @@
         <menu>
             <item
                 android:id="@+id/nav_ubicacion"
-                android:icon="@drawable/ic_location_on_black"
+                android:icon="@drawable/ic_ubicacion"
                 android:title="Ubicacion" />
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:id="@+id/nav_contacto"
+                android:icon="@drawable/ico_llamada"
+                android:title="@string/menu_contacto" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"

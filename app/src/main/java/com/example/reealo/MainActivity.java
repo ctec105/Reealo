@@ -3,6 +3,7 @@ package com.example.reealo;
 import android.os.Bundle;
 import com.example.reealo.fragmentos.Carrito;
 import com.example.reealo.fragmentos.Catalogo;
+import com.example.reealo.fragmentos.Contacto;
 import com.example.reealo.fragmentos.Notificaciones;
 import com.example.reealo.fragmentos.Productos;
 import com.example.reealo.fragmentos.Promociones;
@@ -137,8 +138,12 @@ public class MainActivity extends AppCompatActivity
             // cargamos el fragmento de Carrito de Compras
             fragment = new Carrito();
             callFragment(fragment);
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_contacto) {
+            // cambiamos el título de la actividad
+            this.setTitle(R.string.titulo_contacto);
+            // cargamos el fragmento de Contacto
+            fragment = new Contacto();
+            callFragment(fragment);
         } else if (id == R.id.nav_send) {
 
         }
