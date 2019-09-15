@@ -1,5 +1,6 @@
 package com.example.reealo.Adaptadores;
 
+import android.content.Context;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+//import com.example.reealo.Clases.ProductoTest;
 import com.example.reealo.Clases.Producto;
 import com.example.reealo.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -19,30 +22,32 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.MyView
     // TODO> Instancias que vamos a necesitarr
     private List<Producto> productoList;
     private View.OnClickListener listener;
+    private Context context;
 
     // TODO: Constructor
-    public CatalogoAdapter(List<Producto> productoList) {
+    public CatalogoAdapter(List<Producto> productoList, Context context) {
+        // inicializamos la lista y el contexto
         this.productoList = productoList;
+        this.context = context;
     }
 
     public void setOnClickListener(View.OnClickListener listener) {
         this.listener = listener;
     }
 
-    // TODO: Obtenemos los valores de la vista
+    // TODO: Obtenemos los valores de la vista para asociarlos
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imagen;
-        public TextView nombre, stock, precio, precioOerta;
+        public TextView stock, precio, precioOerta;
 
         public MyViewHolder(View view) {
             super(view);
             imagen = (ImageView) view.findViewById(R.id.imageViewProducto);
-            //nombre = (TextView) view.findViewById(R.id.lblNombre);
-            stock = (TextView) view.findViewById(R.id.lblStock);
+            stock = (TextView) view.findViewById(R.id.lblStockCatalogo);
             precio = (TextView) view.findViewById(R.id.lblPrecio);
-            precio.setPaintFlags(precio.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); // va a tachar el texto
-            precioOerta = (TextView) view.findViewById(R.id.lblPrecioOferta);
+            //precio.setPaintFlags(precio.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); // va a tachar el texto
+            //precioOerta = (TextView) view.findViewById(R.id.lblPrecioOferta);
         }
     }
 
@@ -59,13 +64,11 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Producto producto = productoList.get(position);
-        holder.imagen.setImageResource(producto.getIdImagen());
-        //holder.nombre.setText(producto.getNombre());
-        holder.stock.setText(producto.getStock());
-        holder.precio.setText(producto.getPrecio());
-        holder.precioOerta.setText(producto.getPrecioOferta());
-
-
+        //holder.imagen.setImageResource(Integer.parseInt(producto.getImagen()));
+        Picasso.with(context).load("http://josel.jl.serv.net.mx/ROOT-160/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imagen);
+        holder.stock.setText("Quedan " + String.valueOf(producto.getStock()) + " unidades");
+        holder.precio.setText("S/. " + producto.getPrecio());
+        //holder.precioOerta.setText(String.valueOf(producto.getPrecioOferta()));
     }
 
     // TODO: Devuelve el número total de elementos en el conjunto de datos que posee el adaptador.

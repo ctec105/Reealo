@@ -8,13 +8,13 @@
     tools:context=".Actividades.DetalleCatalogoActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgDetalleCatalogo"
         android:layout_width="match_parent"
         android:layout_height="294dp"
         app:srcCompat="@drawable/cojinblanco" />
 
     <TextView
-        android:id="@+id/textViewNombre"
+        android:id="@+id/lblDescripcionDetalleCatalogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25dp"
@@ -24,7 +24,7 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textViewEspecificacionTitulo"
+        android:id="@+id/lblTituloDetalleDetalleCatalogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -33,27 +33,11 @@
         android:text="Especificación del Producto" />
 
     <TextView
-        android:id="@+id/textViewEspecificacion"
+        android:id="@+id/lblDetalleDetalleCatalogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:text="Medidas 10cm x 10cm" />
-
-    <TextView
-        android:id="@+id/textViewDescripcionTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
-        android:text="Descripción" />
-
-    <TextView
-        android:id="@+id/textViewDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="Almohada personalizada" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,22 +45,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lnkEditar"
+            android:id="@+id/lblPrecioDetalleCatalogo"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="TextView" />
 
-        <TextView
-            android:id="@+id/lnkEliminar"
+        <!--<TextView
+            android:id="@+id/lblPrecioOfertaDetalleCatalogo"
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="TextView"
-            android:textSize="20dp"/>
+            android:textSize="20dp"/>-->
 
         <Button
-            android:id="@+id/buttonAgregar"
+            android:id="@+id/btnAgregarDetalleCatalogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

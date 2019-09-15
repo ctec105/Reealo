@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.reealo.Actividades.GestionarProductoActivity;
 import com.example.reealo.Adaptadores.ProductoAdapter;
-import com.example.reealo.Clases.Producto;
+import com.example.reealo.Clases.ProductoTest;
 import com.example.reealo.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -25,7 +25,7 @@ import java.util.List;
 public class Productos extends Fragment {
 
     // TODO: Instancias que vamos a necesitar
-    private List<Producto> productoList = new ArrayList<>();
+    private List<ProductoTest> productoList = new ArrayList<>();
     private FloatingActionButton floatingActionButton;
     private RecyclerView recyclerView;
     private ProductoAdapter productoAdapter;
@@ -39,43 +39,43 @@ public class Productos extends Fragment {
     private void llenarListaProductos() {
         int[] datosImg = {R.drawable.cojinblanco, R.drawable.cojinmama, R.drawable.cojinrosado, R.drawable.llaverareinamama, R.drawable.llaveromama, R.drawable.vasomama};
 
-        Producto producto = new Producto(datosImg[0],"Cojin Blanco","Quedan 10","S/. 20.00","S/. 15.00");
+        ProductoTest producto = new ProductoTest(datosImg[0],"Cojin Blanco","Quedan 10","S/. 20.00","S/. 15.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[1],"Cojin mamá","Quedan 9","S/. 25.00","S/. 20.00");
+        producto =  new ProductoTest(datosImg[1],"Cojin mamá","Quedan 9","S/. 25.00","S/. 20.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[2],"Cojin Rosado","Quedan 11","S/. 15.00","S/. 10.00");
+        producto =  new ProductoTest(datosImg[2],"Cojin Rosado","Quedan 11","S/. 15.00","S/. 10.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[3],"Llavero reina","Quedan 15","S/. 8.00","S/. 5.00");
+        producto =  new ProductoTest(datosImg[3],"Llavero reina","Quedan 15","S/. 8.00","S/. 5.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[4],"Llavero mamá","Quedan 5","S/. 7.00","S/. 6.00");
+        producto =  new ProductoTest(datosImg[4],"Llavero mamá","Quedan 5","S/. 7.00","S/. 6.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
 
-        producto =  new Producto(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
+        producto =  new ProductoTest(datosImg[5],"Vaso mamá","Quedan 13","S/. 15.00","S/.11.00");
         productoList.add(producto);
     }
 

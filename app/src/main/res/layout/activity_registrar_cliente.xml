@@ -24,7 +24,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtApellido"
+            android:id="@+id/txtApellidoUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +48,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtNombreProducto"
+            android:id="@+id/txtNombreUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,7 +73,7 @@
             android:text="Correo Eletrónico" />
 
         <EditText
-            android:id="@+id/txtCorreo"
+            android:id="@+id/txtCorreoUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -97,7 +97,7 @@
             android:text="Contraseña" />
 
         <EditText
-            android:id="@+id/txtContraseña"
+            android:id="@+id/txtContraseñaUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -136,7 +136,7 @@
             android:layout_marginEnd="8dp">
 
             <Button
-                android:id="@+id/btnCrear"
+                android:id="@+id/btnRegistrarUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Registrar" />

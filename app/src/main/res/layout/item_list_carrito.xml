@@ -28,7 +28,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/lblNombre"
+                    android:id="@+id/lblDescProdCarrito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -37,7 +37,7 @@
                     android:textSize="18dp" />
 
                 <Spinner
-                    android:id="@+id/cboCantidad"
+                    android:id="@+id/cboCantProdCarrito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -61,7 +61,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/lnkEditar"
+                    android:id="@+id/lblPrecioCarrito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -71,7 +71,7 @@
                     android:textSize="12dp" />
 
                 <TextView
-                    android:id="@+id/lnkEliminar"
+                    android:id="@+id/lblPrecioOfertaCarrito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.reealo.Clases.Producto;
+import com.example.reealo.Clases.ProductoTest;
 import com.example.reealo.R;
 
 import java.util.List;
@@ -19,12 +19,12 @@ import java.util.List;
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyViewHolder> implements View.OnClickListener {
 
     // TODO: Instancias que vamos a necesitar
-    private List<Producto> productoList;
+    private List<ProductoTest> productoList;
     private View.OnClickListener listener;
     private Context context;
 
     // TODO: Constructor
-    public ProductoAdapter(List<Producto> productoList) {
+    public ProductoAdapter(List<ProductoTest> productoList) {
         this.productoList = productoList;
     }
 
@@ -57,7 +57,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
     // TODO: Llenamos los controles con data proveniente de la lista que entra en el constructor
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Producto producto = productoList.get(position);
+        ProductoTest producto = productoList.get(position);
 
         //Picasso.with(context).load("http://192.168.1.46/Publicaciones/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imagen);
         holder.imagen.setImageResource(producto.getIdImagen());
