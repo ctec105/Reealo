@@ -38,4 +38,7 @@ dependencies {
     // Libreria Gson para serializar objetos y listas
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    // lIBRERIA Paypal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
 }

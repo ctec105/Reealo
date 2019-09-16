@@ -5,8 +5,9 @@
     <color name="colorAccent">#D81B60</color>
 
     <!-- colores creados -->
-    <color name="colorSubLogo">#1f2450</color>
+    <color name="colorSubLogo">#1F2450</color>
     <color name="colorLogo">#28306F</color>
+    <color name="colorTexto">#FFF</color>
 
 
 </resources>
