@@ -35,7 +35,8 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="12dp"
                     android:text="Nombre"
-                    android:textSize="18dp" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/lblDescripcionProducto"
@@ -43,31 +44,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Descripcion" />
+                    android:text="Descripcion"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/lblPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Precio"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/lblStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Stock"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/imgEditar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/editar" />
-
-                <ImageView
-                    android:id="@+id/imgEliminar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/eliminar" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

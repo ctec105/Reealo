@@ -86,109 +86,109 @@
         android:orientation="vertical"
         android:layout_marginTop="300dp">
 
-       <!-- <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!-- <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/recyclerviewCarrito"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="10dp">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:paddingTop="10dp">
 
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Introduce el código de promoción"
-                android:textSize="12dp" />
+             <EditText
+                 android:id="@+id/editText2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:ems="10"
+                 android:inputType="textPersonName"
+                 android:text="Introduce el código de promoción"
+                 android:textSize="12dp" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Utilizar" />
-        </LinearLayout>
+             <Button
+                 android:id="@+id/button4"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:text="Utilizar" />
+         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:paddingTop="10dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="268dp"
-                android:layout_height="wrap_content"
-                android:text="Subtotal" />
+             <TextView
+                 android:id="@+id/textView2"
+                 android:layout_width="268dp"
+                 android:layout_height="wrap_content"
+                 android:text="Subtotal" />
 
-            <TextView
-                android:id="@+id/lblSubTotalCarrito"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S/. 262.00" />
+             <TextView
+                 android:id="@+id/lblSubTotalCarrito"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="S/. 262.00" />
 
-        </LinearLayout>
+         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="268dp"
-                android:layout_height="wrap_content"
-                android:text="Descuento (10%)" />
+             <TextView
+                 android:id="@+id/textView4"
+                 android:layout_width="268dp"
+                 android:layout_height="wrap_content"
+                 android:text="Descuento (10%)" />
 
-            <TextView
-                android:id="@+id/lblDescuentoCarrito"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="S/. 52.40" />
+             <TextView
+                 android:id="@+id/lblDescuentoCarrito"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:text="S/. 52.40" />
 
-        </LinearLayout>
+         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="268dp"
-                android:layout_height="wrap_content"
-                android:text="Envio" />
+             <TextView
+                 android:id="@+id/textView6"
+                 android:layout_width="268dp"
+                 android:layout_height="wrap_content"
+                 android:text="Envio" />
 
-            <TextView
-                android:id="@+id/lblEnvioCarrito"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="S/. 10.00" />
-        </LinearLayout>
+             <TextView
+                 android:id="@+id/lblEnvioCarrito"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="S/. 10.00" />
+         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="268dp"
-                android:layout_height="wrap_content"
-                android:text="Total" />
+             <TextView
+                 android:id="@+id/textView8"
+                 android:layout_width="268dp"
+                 android:layout_height="wrap_content"
+                 android:text="Total" />
 
-            <TextView
-                android:id="@+id/lblTotalCarrito"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S/. 219" />
-        </LinearLayout>-->
+             <TextView
+                 android:id="@+id/lblTotalCarrito"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="S/. 219" />
+         </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
