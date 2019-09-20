@@ -8,6 +8,8 @@
     <color name="colorSubLogo">#1F2450</color>
     <color name="colorLogo">#28306F</color>
     <color name="colorTexto">#FFF</color>
+    <color name="coloSuccess">#E91E63</color>
+    <color name="coloDelete">#009688</color>
 
 
 </resources>
