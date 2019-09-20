@@ -44,6 +44,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
     EditText txtNombre, txtDescripcion, txtPrecio, txtStock,txtImagen;
     Button btnRegistrar;
+    Button btnEliminar;
 
     // TODO: Crea e inicia el activity (GestionarProductoActivity)
     @Override
@@ -62,6 +63,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
 
         Button button = (Button)findViewById(R.id.btnGrabar);
+        Button buttonEli = (Button)findViewById(R.id.btnEliminar);
 
         // recuperamos los valores que cargamos a la actividad al seleccionar un producto
         Intent intent = getIntent();
@@ -69,13 +71,16 @@ public class GestionarProductoActivity extends AppCompatActivity {
         if (bundle != null) {
             this.setTitle(R.string.titulo_actualizar_producto);
             button.setText(R.string.button_actualizar);
+            buttonEli.setText(R.string.button_eliminar);
+            buttonEli.setVisibility(View.VISIBLE);
             nombre.setText(bundle.getString("descripcion"));
             descripcion.setText(bundle.getString("detalle"));
-            stock.setText(bundle.getString("stock"));
-            precio.setText(bundle.getString("precio"));
+            stock.setText(bundle.getInt("stock")+"");
+            precio.setText(bundle.getDouble("precio")+"");
         } else{
             this.setTitle(R.string.titulo_registrar_producto);
             button.setText(R.string.button_registrar);
+            buttonEli.setVisibility(View.GONE);
         }
 
 
@@ -144,7 +149,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
                             Log.i("cadenaJson ====> ", cadenaJson);
                             runOnUiThread(new Runnable() {
                                 public void run() {
-                                    if (cadenaJson.equals(1)) {
+                                    if (cadenaJson.equals("1")) {
                                         Toast toast = Toast.makeText(getApplicationContext(), "Se insertó correctamente", Toast.LENGTH_SHORT);
                                         toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                                         toast.show();
