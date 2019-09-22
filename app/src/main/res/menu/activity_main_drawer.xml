@@ -29,6 +29,11 @@
             android:title="@string/menu_carrito" />
 
         <item
+            android:id="@+id/nav_busquedas"
+            android:icon="@drawable/ic_carrito_compras"
+            android:title="@string/menu_busquedas" />
+
+        <item
             android:id="@+id/nav_cerrar_sesion"
             android:icon="@drawable/ic_settings_black"
             android:title="@string/menu_cerrar_sesion" />

@@ -137,6 +137,14 @@ public class DetalleCatalogoActivity extends AppCompatActivity {
         return true;
     }
 
+    // TODO: Prepara el menú de opciones antes de que se muestre el menú (usado para deshabilitar o habilitar elementos)
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item = menu.findItem(id.itemProductos);
+        item.setVisible(false);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     // TODO: Se llama cuando se selecciona una opción del menú superior
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

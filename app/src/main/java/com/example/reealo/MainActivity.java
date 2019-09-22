@@ -1,26 +1,33 @@
 package com.example.reealo;
 
 import android.os.Bundle;
+
 import com.example.reealo.fragmentos.Carrito;
 import com.example.reealo.fragmentos.Catalogo;
 import com.example.reealo.fragmentos.Contacto;
+import com.example.reealo.fragmentos.HistorialBusquedas;
 import com.example.reealo.fragmentos.Notificaciones;
 import com.example.reealo.fragmentos.Productos;
 import com.example.reealo.fragmentos.Promociones;
+
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
 import android.view.Menu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     // TODO: Esta opción va a permitir pasar de otra actividad a cualquiera de los fragmentos del MainActivity
     public static int opcion;
@@ -87,10 +94,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        // si hizo clic en el item de carrito de compras
         if (id == R.id.itemCarrito) {
-            // mostramos un mensaje en pantalla
-            Toast.makeText(this, "Has pulsado el carrito de compras", Toast.LENGTH_SHORT).show();
-            // Cambiamos el titulo de la actividad
+            //Toast.makeText(this, "Has pulsado el carrito de compras", Toast.LENGTH_SHORT).show();
             this.setTitle(R.string.titulo_carrito_compras);
             // cargamos el fragmento de carrito de Compras
             Fragment fragment = new Carrito();
@@ -108,6 +115,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
 
+        // si hizo clic en el nav inicio
         if (id == R.id.nav_inicio) {
             // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_buscar_producto);
@@ -115,33 +123,27 @@ public class MainActivity extends AppCompatActivity
             fragment = new Catalogo();
             callFragment(fragment);
         } else if (id == R.id.nav_productos) {
-            // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_listar_producto);
-              // cargamos el fragmento de Productos
             fragment = new Productos();
             callFragment(fragment);
         } else if (id == R.id.nav_promociones) {
-            // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_listar_promocion);
-            // cargamos el fragmento de Promociones
             fragment = new Promociones();
             callFragment(fragment);
         } else if (id == R.id.nav_notificacion) {
-            // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_listar_notificacion);
-            // cargamos el fragmento de Notificaciones
             fragment = new Notificaciones();
             callFragment(fragment);
         } else if (id == R.id.nav_carrito) {
-            // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_carrito_compras);
-            // cargamos el fragmento de Carrito de Compras
             fragment = new Carrito();
             callFragment(fragment);
+        } else if (id == R.id.nav_busquedas) {
+            this.setTitle(R.string.titulo_historial_busquedas);
+            fragment = new HistorialBusquedas();
+            callFragment(fragment);
         } else if (id == R.id.nav_contacto) {
-            // cambiamos el título de la actividad
             this.setTitle(R.string.titulo_contacto);
-            // cargamos el fragmento de Contacto
             fragment = new Contacto();
             callFragment(fragment);
         } else if (id == R.id.nav_send) {
@@ -155,14 +157,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Método creado para llamar a los fragmentos (reutilizable)
-    void callFragment (Fragment fragmenet){
+    void callFragment(Fragment fragmenet) {
         try {
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.contenedor_principal,fragmenet).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor_principal, fragmenet).commit();
             DrawerLayout driver = (DrawerLayout) findViewById(R.id.drawer_layout);
             driver.closeDrawer(GravityCompat.START);
-        }catch (Exception ex){
-            Toast.makeText(this,"",Toast.LENGTH_LONG);
+        } catch (Exception ex) {
+            Toast.makeText(this, "", Toast.LENGTH_LONG);
         }
 
     }

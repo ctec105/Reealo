@@ -123,114 +123,114 @@ public class Carrito extends Fragment {
         //double total = 0;
         total = 0;
 
-//        if (cesta != null) {
-        for (int i = 0; i < cesta.size(); i++) {
-            Producto producto = cesta.get(i);
-            linearLayout = new LinearLayout(this.getContext());
-            linearLayout.setOrientation(linearLayout.HORIZONTAL);
+        if (cesta != null) {
+            for (int i = 0; i < cesta.size(); i++) {
+                Producto producto = cesta.get(i);
+                linearLayout = new LinearLayout(this.getContext());
+                linearLayout.setOrientation(linearLayout.HORIZONTAL);
 
-            final TextView lblDescripcion = new TextView(this.getContext());
-            lblDescripcion.setText(producto.getDescripcion());
-            lblDescripcion.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
-            lblDescripcion.setPadding(0, 0, 10, 0);
+                final TextView lblDescripcion = new TextView(this.getContext());
+                lblDescripcion.setText(producto.getDescripcion());
+                lblDescripcion.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
+                lblDescripcion.setPadding(0, 0, 10, 0);
 
-            final TextView lblPrecio = new TextView(this.getContext());
-            lblPrecio.setText("S/. " + producto.getPrecio());
-            lblPrecio.setLayoutParams(new LinearLayout.LayoutParams(230, ViewGroup.LayoutParams.WRAP_CONTENT));
-            lblPrecio.setPadding(0, 0, 10, 0);
-            lblPrecio.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+                final TextView lblPrecio = new TextView(this.getContext());
+                lblPrecio.setText("S/. " + producto.getPrecio());
+                lblPrecio.setLayoutParams(new LinearLayout.LayoutParams(230, ViewGroup.LayoutParams.WRAP_CONTENT));
+                lblPrecio.setPadding(0, 0, 10, 0);
+                lblPrecio.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
 
-            final TextView lblCantidad = new TextView(this.getContext());
-            lblCantidad.setText(producto.getCantidad() + "");
-            lblCantidad.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT));
-            lblCantidad.setPadding(0, 0, 10, 0);
-            lblCantidad.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+                final TextView lblCantidad = new TextView(this.getContext());
+                lblCantidad.setText(producto.getCantidad() + "");
+                lblCantidad.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT));
+                lblCantidad.setPadding(0, 0, 10, 0);
+                lblCantidad.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
 
-            final TextView lblMonto = new TextView(this.getContext());
-            double montoCompra = producto.getPrecio() * producto.getCantidad();
-            lblMonto.setText("S/. " + montoCompra);
-            lblMonto.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
-            lblMonto.setPadding(0, 0, 50, 0);
-            lblMonto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+                final TextView lblMonto = new TextView(this.getContext());
+                double montoCompra = producto.getPrecio() * producto.getCantidad();
+                lblMonto.setText("S/. " + montoCompra);
+                lblMonto.setLayoutParams(new LinearLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
+                lblMonto.setPadding(0, 0, 50, 0);
+                lblMonto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
 
-            final Button btnRestar = new Button(this.getContext());
-            btnRestar.setText("-");
-            btnRestar.setLayoutParams(new LinearLayout.LayoutParams(150, ViewGroup.LayoutParams.WRAP_CONTENT));
-            btnRestar.setPadding(0, 10, 0, 0);
+                final Button btnRestar = new Button(this.getContext());
+                btnRestar.setText("-");
+                btnRestar.setLayoutParams(new LinearLayout.LayoutParams(150, ViewGroup.LayoutParams.WRAP_CONTENT));
+                btnRestar.setPadding(0, 10, 0, 0);
 
-            final String codPro = cesta.get(i).getCodigo();
+                final String codPro = cesta.get(i).getCodigo();
 
-            btnRestar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    for (int i = 0; i < cesta.size(); i++) {
-                        if (cesta.get(i).getCodigo().equals(codPro)) {
-                            cesta.get(i).setCantidad(cesta.get(i).getCantidad() - 1);
-                            if (cesta.get(i).getCantidad() < 1) {
-                                cesta.remove(i);
+                btnRestar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        for (int i = 0; i < cesta.size(); i++) {
+                            if (cesta.get(i).getCodigo().equals(codPro)) {
+                                cesta.get(i).setCantidad(cesta.get(i).getCantidad() - 1);
+                                if (cesta.get(i).getCantidad() < 1) {
+                                    cesta.remove(i);
+                                }
                             }
                         }
+
+                        // actualizar mi preferencia
+                        String jsonlist = gson.toJson(cesta);
+                        carrito = getActivity().getSharedPreferences("carrito", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = carrito.edit();
+                        editor.putString("cesta", jsonlist);
+                        editor.commit(); // guardamos datos y cerramos la preferencia
+
+                        // actualiza la cesta
+                        cuerpoCesta(vista);
+
+                        // actualizar el fragmento
+                        Fragment frg = null;
+                        Class fragmentClass;
+                        fragmentClass = Carrito.class;
+                        try {
+                            frg = (androidx.fragment.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                        getFragmentManager().beginTransaction().replace(R.id.contenedor_principal, frg).commit();
                     }
+                });
 
-                    // actualizar mi preferencia
-                    String jsonlist = gson.toJson(cesta);
-                    carrito = getActivity().getSharedPreferences("carrito", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = carrito.edit();
-                    editor.putString("cesta", jsonlist);
-                    editor.commit(); // guardamos datos y cerramos la preferencia
+                linearLayout.addView(lblDescripcion);
+                linearLayout.addView(lblPrecio);
+                linearLayout.addView(lblCantidad);
+                linearLayout.addView(lblMonto);
+                linearLayout.addView(btnRestar);
 
-                    // actualiza la cesta
-                    cuerpoCesta(vista);
+                ll.addView(linearLayout);
 
-                    // actualizar el fragmento
-                    Fragment frg = null;
-                    Class fragmentClass;
-                    fragmentClass = Carrito.class;
-                    try {
-                        frg = (androidx.fragment.app.Fragment) fragmentClass.newInstance();
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-                    getFragmentManager().beginTransaction().replace(R.id.contenedor_principal, frg).commit();
-                }
-            });
+                total += montoCompra;
+            }
 
-            linearLayout.addView(lblDescripcion);
-            linearLayout.addView(lblPrecio);
-            linearLayout.addView(lblCantidad);
-            linearLayout.addView(lblMonto);
-            linearLayout.addView(btnRestar);
+            final TextView lblTotal = new TextView(this.getContext());
+            lblTotal.setText("Total a Pagar:");
+            lblTotal.setLayoutParams(new LinearLayout.LayoutParams(630, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+            lblTotal.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            lblTotal.setPadding(0, 50, 0, 0);
 
-            ll.addView(linearLayout);
+            final TextView txtTotal = new TextView(this.getContext());
+            txtTotal.setText("S/. " + total);
+            txtTotal.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 
-            total += montoCompra;
+            txtTotal.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            txtTotal.setPadding(0, 0, 10, 0);
+            txtTotal.setPadding(0, 50, 0, 0);
+
+            LinearLayout linearLayout2 = new LinearLayout(this.getContext());
+            linearLayout2.setOrientation(LinearLayout.HORIZONTAL);
+
+            linearLayout2.addView(lblTotal);
+            linearLayout2.addView(txtTotal);
+            ll.addView(linearLayout2);
+
+            //resumenCompra();
+        } else {
+            Toast.makeText(getActivity().getApplicationContext(), "Tu carrito esta vacio", Toast.LENGTH_SHORT).show();
         }
-
-        final TextView lblTotal = new TextView(this.getContext());
-        lblTotal.setText("Total a Pagar:");
-        lblTotal.setLayoutParams(new LinearLayout.LayoutParams(630, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-        lblTotal.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
-        lblTotal.setPadding(0, 50, 0, 0);
-
-        final TextView txtTotal = new TextView(this.getContext());
-        txtTotal.setText("S/. " + total);
-        txtTotal.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-
-        txtTotal.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
-        txtTotal.setPadding(0, 0, 10, 0);
-        txtTotal.setPadding(0, 50, 0, 0);
-
-        LinearLayout linearLayout2 = new LinearLayout(this.getContext());
-        linearLayout2.setOrientation(LinearLayout.HORIZONTAL);
-
-        linearLayout2.addView(lblTotal);
-        linearLayout2.addView(txtTotal);
-        ll.addView(linearLayout2);
-
-        //resumenCompra();
-//        } else {
-//            Toast.makeText(getActivity().getApplicationContext(), "Tu carrito esta vacio", Toast.LENGTH_SHORT).show();
-//        }
 
     }
 

@@ -16,6 +16,7 @@
     <string name="menu_preguntas">Preguntas</string>
     <string name="menu_promociones_usuario">Promociones</string>
     <string name="menu_carrito">Carrito</string>
+    <string name="menu_busquedas">Busquedas</string>
     <string name="menu_pedidos">Pedidos</string>
     <string name="menu_respuestas">Respuestas</string>
     <string name="menu_cerrar_sesion">Cerrar Sesión</string>
@@ -29,6 +30,7 @@
     <string name="titulo_actualizar_producto">Actualizar Producto</string>
     <string name="titulo_detalle_producto">Detalle del Producto</string>
     <string name="titulo_carrito_compras">Carrito de Compras</string>
+    <string name="titulo_historial_busquedas">Historial de Busquedas</string>
     <string name="titulo_listar_promocion">Mis Promociones</string>
     <string name="titulo_crear_promocion">Crear Promoción</string>
     <string name="titulo_actualizar_promocion">Actualizar Promoción</string>
