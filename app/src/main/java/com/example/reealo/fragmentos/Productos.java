@@ -12,20 +12,15 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.reealo.Actividades.DetalleCatalogoActivity;
 import com.example.reealo.Actividades.GestionarProductoActivity;
-import com.example.reealo.Adaptadores.CatalogoAdapter;
 import com.example.reealo.Adaptadores.ProductoAdapter;
 import com.example.reealo.Clases.Producto;
-import com.example.reealo.Clases.ProductoTest;
 import com.example.reealo.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -45,10 +40,6 @@ public class Productos extends Fragment {
     private FloatingActionButton floatingActionButton;
     private RecyclerView recyclerView;
     private ProductoAdapter productoAdapter;
-
-    private List<String> lastSearches;
-    private MaterialSearchBar searchBar;
-
 
     // TODO: Constructur
     public Productos() {
@@ -176,22 +167,6 @@ public class Productos extends Fragment {
     // TODO: Metodo que crea y devuelve la jerarquía de vistas asociada con el fragmento.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-       /* searchBar = (MaterialSearchBar)findViewById(R.id.searchBar);
-        searchBar.setHint("Custom hint");
-        searchBar.setSpeechMode(true);
-        //enable searchbar callbacks
-        searchBar.setOnSearchActionListener(this);
-        //restore last queries from disk
-        lastSearches = loadSearchSuggestionFromDisk();
-        searchBar.setLastSuggestions(list);
-        //Inflate menu and setup OnMenuItemClickListener
-        searchBar.inflateMenu(R.menu.main);
-        searchBar.getMenu().setOnMenuItemClickListener(this);
-*/
-
-
-
         // le indicamos que este fragmento tiene su propio menù de opciones
         setHasOptionsMenu(true);
 
