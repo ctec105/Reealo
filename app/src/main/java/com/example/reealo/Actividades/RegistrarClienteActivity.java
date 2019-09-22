@@ -93,7 +93,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                             Log.i("cadenaJson ====> ", cadenaJson);
                             runOnUiThread(new Runnable() {
                                 public void run() {
-                                    if (cadenaJson.equals(1)) {
+                                    if (cadenaJson.equals("1")) {
                                         Toast toast = Toast.makeText(getApplicationContext(), "Se insertó correctamente", Toast.LENGTH_SHORT);
                                         toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                                         toast.show();

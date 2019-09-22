@@ -42,8 +42,9 @@ public class GestionarProductoActivity extends AppCompatActivity {
     ImageView ivImage;
     Integer REQUEST_CAMERA=1,SELECT_FILE=0;
 
-    EditText txtNombre, txtDescripcion, txtPrecio, txtStock,txtImagen;
+    EditText txtCodigo, txtNombre, txtDescripcion, txtPrecio, txtStock,txtImagen;
     Button btnRegistrar;
+    Button btnEliminar;
 
     // TODO: Crea e inicia el activity (GestionarProductoActivity)
     @Override
@@ -55,6 +56,8 @@ public class GestionarProductoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // obtenemos de la vista los componentes para asociarlos
+        final
+        TextView codigo = (TextView) findViewById(R.id.txtCodigoProducto);
         TextView nombre = (TextView) findViewById(R.id.txtNombreProducto);
         TextView descripcion = (TextView) findViewById(R.id.txtDescripcionProducto);
         TextView stock = (TextView) findViewById(R.id.txtStockProducto);
@@ -62,6 +65,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
 
         Button button = (Button)findViewById(R.id.btnGrabar);
+        Button buttonEli = (Button)findViewById(R.id.btnEliminar);
 
         // recuperamos los valores que cargamos a la actividad al seleccionar un producto
         Intent intent = getIntent();
@@ -69,13 +73,17 @@ public class GestionarProductoActivity extends AppCompatActivity {
         if (bundle != null) {
             this.setTitle(R.string.titulo_actualizar_producto);
             button.setText(R.string.button_actualizar);
+            buttonEli.setText(R.string.button_eliminar);
+            buttonEli.setVisibility(View.VISIBLE);
+            codigo.setText(bundle.getString("codigo"));
             nombre.setText(bundle.getString("descripcion"));
             descripcion.setText(bundle.getString("detalle"));
-            stock.setText(bundle.getString("stock"));
-            precio.setText(bundle.getString("precio"));
+            stock.setText(bundle.getInt("stock")+"");
+            precio.setText(bundle.getDouble("precio")+"");
         } else{
             this.setTitle(R.string.titulo_registrar_producto);
             button.setText(R.string.button_registrar);
+            buttonEli.setVisibility(View.GONE);
         }
 
 
@@ -92,6 +100,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
 
         // enlazamos los controles de la vista
+        txtCodigo = findViewById(R.id.txtCodigoProducto);
         txtNombre = findViewById(R.id.txtNombreProducto);
         txtDescripcion = findViewById(R.id.txtDescripcionProducto);
         txtPrecio = findViewById(R.id.txtPrecioProducto);
@@ -144,7 +153,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
                             Log.i("cadenaJson ====> ", cadenaJson);
                             runOnUiThread(new Runnable() {
                                 public void run() {
-                                    if (cadenaJson.equals(1)) {
+                                    if (cadenaJson.equals("1")) {
                                         Toast toast = Toast.makeText(getApplicationContext(), "Se insertó correctamente", Toast.LENGTH_SHORT);
                                         toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                                         toast.show();
@@ -158,7 +167,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
                         }
                     }
                 });
-
+                txtCodigo.setText("");
                 txtNombre.setText("");
                 txtDescripcion.setText("");
                 txtStock.setText("");
@@ -167,6 +176,71 @@ public class GestionarProductoActivity extends AppCompatActivity {
         });
 
 
+
+        btnEliminar = findViewById(R.id.btnEliminar);
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // creamos un objeto OkHttpClienta par realizar llamadas eficientes de red (ejor que usar HttpURLConnection y Apache HTTP Client)
+                OkHttpClient client = new OkHttpClient();
+
+                // definimos el cuerpo del post que le vamos a enviar como parametro al servicio (una cadena que contenga un JSON)
+                String postBody = "{\n" +
+                        " \"codigo\": \"" + codigo.getText() + "\"\n" +
+                        "}";
+                Log.i("requestBody ====> ", postBody);
+
+
+                // definimos el tipo de datos que vamos a pasar (json)
+                MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+                // ccreamos el cuerpo del resquest
+                RequestBody requestBody = RequestBody.create(JSON, postBody);
+
+                // para usar OkHttp necesitamos crear un objeto Request
+                Request request = new Request.Builder()
+                        .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/eliminarProducto")
+                        .post(requestBody)
+                        .build();
+                Log.i("requestBody ====> 2 ", request.body().toString());
+                // para realizar llamadas asincrónicas, mediante el objeto Call usamos el método enqueue
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(Call call, final Response response) throws IOException {
+                        if (!response.isSuccessful()) {
+                            throw new IOException("Codigo inesperado ====> " + response);
+                        } else {
+                            final String cadenaJson = response.body().string();
+                            Log.i("cadenaJson ====> ", cadenaJson);
+                            runOnUiThread(new Runnable() {
+                                public void run() {
+                                    if (cadenaJson.equals("1")) {
+                                        Toast toast = Toast.makeText(getApplicationContext(), "Se insertó correctamente", Toast.LENGTH_SHORT);
+                                        toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                                        toast.show();
+                                    } else {
+                                        Toast toast = Toast.makeText(getApplicationContext(), "No se insertó correctamente", Toast.LENGTH_SHORT);
+                                        toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                                        toast.show();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+                txtCodigo.setText("");
+                txtNombre.setText("");
+                txtDescripcion.setText("");
+                txtStock.setText("");
+                txtPrecio.setText("");
+            }
+        });
     }
 
     // TODO: Prepara el menú de opciones antes de que se muestre el menú (usado para deshabilitar o habilitar elementos)
