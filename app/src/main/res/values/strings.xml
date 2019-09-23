@@ -37,6 +37,7 @@
     <string name="titulo_buscar_producto">Buscar Producto</string>
     <string name="titulo_listar_notificacion">Mis Notifiaciones</string>
     <string name="titulo_contacto">Contacto</string>
+    <string name="titulo_ubicacion">Ubicación</string>
     <string name="button_registrar">Registrar</string>
     <string name="button_actualizar">Actualizar</string>
     <string name="button_eliminar">Eliminar</string>

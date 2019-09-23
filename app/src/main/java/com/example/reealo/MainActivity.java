@@ -15,6 +15,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import android.view.MenuItem;
 
+import com.example.reealo.fragmentos.Ubicacion;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -142,9 +143,13 @@ public class MainActivity extends AppCompatActivity
             this.setTitle(R.string.titulo_historial_busquedas);
             fragment = new HistorialBusquedas();
             callFragment(fragment);
-        } else if (id == R.id.nav_contacto) {
-            this.setTitle(R.string.titulo_contacto);
-            fragment = new Contacto();
+        } else if (id == R.id.nav_busquedas) {
+            this.setTitle(R.string.titulo_historial_busquedas);
+            fragment = new HistorialBusquedas();
+            callFragment(fragment);
+        } else if (id == R.id.nav_ubicacion) {
+            this.setTitle(R.string.titulo_ubicacion);
+            fragment = new Ubicacion();
             callFragment(fragment);
         } else if (id == R.id.nav_send) {
 

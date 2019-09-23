@@ -41,4 +41,7 @@ dependencies {
 
     // Libreria Paypal
     implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
+
+    // Libreria PLay Service Mpas
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
