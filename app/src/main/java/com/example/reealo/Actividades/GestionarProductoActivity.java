@@ -133,7 +133,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
                 // para usar OkHttp necesitamos crear un objeto Request
                 Request request = new Request.Builder()
-                        .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/registrarProducto")
+                        .url("http://joselyn.jl.serv.net.mx/ROOT-160/webresources/testWS/registrarProducto")
                         .post(requestBody)
                         .build();
                 Log.i("requestBody ====> 2 ", request.body().toString());
@@ -200,7 +200,7 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
                 // para usar OkHttp necesitamos crear un objeto Request
                 Request request = new Request.Builder()
-                        .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/eliminarProducto")
+                        .url("http://joselyn.jl.serv.net.mx/ROOT-160/webresources/testWS/eliminarProducto")
                         .post(requestBody)
                         .build();
                 Log.i("requestBody ====> 2 ", request.body().toString());
@@ -314,12 +314,5 @@ public class GestionarProductoActivity extends AppCompatActivity {
 
         }
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        return true;
-    }
-
 
 }

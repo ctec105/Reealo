@@ -28,8 +28,23 @@
         android:theme="@style/AppTheme">
 
         <!-- Google Maps -->
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB1OSQVFh_YPuPpLufLa1gEU04y4WP0siw" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyB1OSQVFh_YPuPpLufLa1gEU04y4WP0siw" />
+
+        <!-- Firebase -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value=" my_channel_id_01" />
+
+        <service android:name=".firebase.MyAndroidFirebaseMsgService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name=".Actividades.SplashActivity"

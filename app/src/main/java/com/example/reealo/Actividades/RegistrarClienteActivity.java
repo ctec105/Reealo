@@ -73,7 +73,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
 
                 // para usar OkHttp necesitamos crear un objeto Request
                 Request request = new Request.Builder()
-                        .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/registrarUsuario")
+                        .url("http://joselyn.jl.serv.net.mx/ROOT-160/webresources/testWS/registrarUsuario")
                         .post(requestBody)
                         .build();
 

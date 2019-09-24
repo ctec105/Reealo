@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "361252924236",
+    "firebase_url": "https://reealo-253801.firebaseio.com",
+    "project_id": "reealo-253801",
+    "storage_bucket": "reealo-253801.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361252924236:android:17b93c36c05bace5b47de9",
+        "android_client_info": {
+          "package_name": "com.example.reealo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361252924236-46tdv91d144697h5d6q1g4nsiqa8m4qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reealo",
+            "certificate_hash": "60ecd13e14208079d7440304d8d5e1d102baffbb"
+          }
+        },
+        {
+          "client_id": "361252924236-d4vdl929gin2ogciubk9m8sj4g8c676j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhHIPL8LNG1026_m0lX1Hy5Xlv4hq4N0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361252924236-d4vdl929gin2ogciubk9m8sj4g8c676j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

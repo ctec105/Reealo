@@ -79,7 +79,7 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.MyViewHo
         Producto producto = productoList.get(position);
         codProd = producto.getCodigo();
         //holder.imgProducto.setImageResource(Integer.parseInt(producto.getImagen()));
-        Picasso.with(context).load("http://josel.jl.serv.net.mx/ROOT-160/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imgProducto);
+        Picasso.with(context).load("http://joselyn.jl.serv.net.mx/ROOT-160/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imgProducto);
         holder.lblDescripcion.setText(producto.getDescripcion());
         holder.lblPrecio.setText("S/. " + producto.getPrecio() * producto.getCantidad());
         holder.lblPrecio.setPaintFlags(holder.lblPrecio.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); // va a tachar el texto

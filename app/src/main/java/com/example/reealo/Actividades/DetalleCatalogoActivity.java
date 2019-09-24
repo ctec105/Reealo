@@ -82,7 +82,7 @@ public class DetalleCatalogoActivity extends AppCompatActivity {
 
         // seteamos los valores a la vista
         //imgDetalle.setImageResource(Integer.parseInt(img));
-        Picasso.with(getApplicationContext()).load("http://josel.jl.serv.net.mx/ROOT-160/imagenes/"+ img).into(imgDetalle);
+        Picasso.with(getApplicationContext()).load("http://joselyn.jl.serv.net.mx/ROOT-160/imagenes/"+ img).into(imgDetalle);
         lblDescripcion.setText(desc);
         lblDetalle.setText(detalle);
         lblPrecio.setText("S/. " + precio);

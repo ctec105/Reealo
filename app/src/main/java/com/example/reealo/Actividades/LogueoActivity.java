@@ -102,7 +102,7 @@ public class LogueoActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/validarUsuario?correo="
+                .url("http://joselyn.jl.serv.net.mx/ROOT-160/webresources/testWS/validarUsuario?correo="
                         + txtCorreo.getText() + "&contraseña=" + txtContraseña.getText())
                 .build();
 

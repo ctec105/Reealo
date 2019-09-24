@@ -96,7 +96,7 @@ public class Productos extends Fragment {
 
         // para usar OkHttp necesitamos crear un objeto Request
         Request request = new Request.Builder()
-                .url("http://josel.jl.serv.net.mx/ROOT-160/webresources/testWS/listarProductos")
+                .url("http://joselyn.jl.serv.net.mx/ROOT-160/webresources/testWS/listarProductos")
                 .build();
 
         // para realizar una llamada de red síncrona, use Client para crear un Call object y use el método execute

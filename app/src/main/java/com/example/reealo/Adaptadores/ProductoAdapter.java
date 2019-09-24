@@ -76,7 +76,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyView
 
         Producto producto = productoList.get(position);
         //holder.imagen.setImageResource(Integer.parseInt(producto.getImagen()));
-        Picasso.with(context).load("http://josel.jl.serv.net.mx/ROOT-160/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imagen);
+        Picasso.with(context).load("http://joselyn.jl.serv.net.mx/ROOT-160/imagenes/"+ producto.getImagen()).resize(400,400).into(holder.imagen);
         //holder.stock.setText("Quedan " + String.valueOf(producto.getStock()) + " unidades");
         //holder.precio.setText("S/. " + producto.getPrecio());
         //holder.precioOerta.setText(String.valueOf(producto.getPrecioOferta()));
