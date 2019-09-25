@@ -151,6 +151,10 @@ public class MainActivity extends AppCompatActivity
             this.setTitle(R.string.titulo_ubicacion);
             fragment = new Ubicacion();
             callFragment(fragment);
+        } else if (id == R.id.nav_contacto) {
+            this.setTitle(R.string.titulo_contacto);
+            fragment = new Contacto();
+            callFragment(fragment);
         } else if (id == R.id.nav_send) {
 
         }

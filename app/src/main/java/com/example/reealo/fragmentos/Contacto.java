@@ -25,6 +25,8 @@ public class Contacto extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // le indicamos que este fragmento tiene su propio menù de opciones
+        setHasOptionsMenu(true);
 
         View view = inflater.inflate(R.layout.fragment_contacto,
                 container, false);
@@ -56,8 +58,10 @@ public class Contacto extends Fragment {
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         // quiero ocultar la opciòn del carrito de compras
-        MenuItem item = menu.findItem(R.id.itemCarrito);
-        item.setVisible(false);
+        MenuItem itemCarrito = menu.findItem(R.id.itemCarrito);
+        MenuItem itemProductos = menu.findItem(R.id.itemProductos);
+        itemCarrito.setVisible(false);
+        itemProductos.setVisible(false);
     }
 
 }

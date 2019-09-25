@@ -30,7 +30,7 @@
 
         <item
             android:id="@+id/nav_busquedas"
-            android:icon="@drawable/ic_carrito_compras"
+            android:icon="@drawable/ic_menu_buscar"
             android:title="@string/menu_busquedas" />
 
         <item
